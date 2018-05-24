@@ -1,0 +1,69 @@
+<!-- 1.	Register page should require First Name, Last Name, Email, Password, Confirm Password, and Company Name as mandatory, and optional address, and phone number (US Format) fields.<div class="row"> -->
+<div class="col-md-12">
+  <nb-card class="inline-form-card">
+    <nb-card-header>Register</nb-card-header>
+    <nb-card-body>
+      <form class="form-inline" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="input-group full-width">
+          <div class="input-group-addon">First Name</div>
+          <input type="text" class="form-control" placeholder="First Name" formControlName="firstName">
+          <span *ngIf="firstName.invalid && firstName.touched">
+            First Name Required
+          </span>
+        </div>
+
+        <div class="input-group full-width">
+          <div class="input-group-addon">Last Name</div>
+          <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
+          <span *ngIf="lastName.invalid && lastName.touched">
+            lastName Required
+          </span>
+        </div>
+
+        <div class="input-group full-width">
+          <div class="input-group-addon">Email</div>
+          <input type="text" class="form-control" placeholder="Email" formControlName="email">
+          <span *ngIf="email.invalid && email.touched">
+            Email doesnt seem right
+          </span>
+
+        </div>
+
+        <div class="input-group full-width">
+          <div class="input-group-addon">Password</div>
+          <input type="password" class="form-control" placeholder="Password" formControlName="password">
+          <span *ngIf="password.invalid && password.touched">
+            password Required or Invalid
+          </span>
+        </div>
+
+        <div class="input-group full-width">
+          <div class="input-group-addon">Confirm Password</div>
+          <input type="password" class="form-control" placeholder="Confirm Password" formControlName="confirmPassword">
+          <span *ngIf="confirm password">
+            Password dont match
+          </span>
+        </div>
+
+        <div class="input-group full-width">
+          <div class="input-group-addon">Company Name</div>
+          <input type="text" class="form-control" placeholder="Company Name" formControlName="companyName">
+          <span *ngIf="companyName.invalid && companyName.touched">
+            Invalid Company
+          </span>
+        </div>
+
+        <div class="input-group full-width">
+          <div class="input-group-addon">Address</div>
+          <input type="text" class="form-control" placeholder="Address" formControlName="address">
+        </div>
+
+        <div class="input-group full-width">
+          <div class="input-group-addon">phone number</div>
+          <input type="number" class="form-control" placeholder="Phone Number" formControlName="phoneNumber">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Submit</button>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>

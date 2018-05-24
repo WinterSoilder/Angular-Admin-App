@@ -1,0 +1,15 @@
+<div class="col-md-12">
+  <nb-card class="inline-form-card">
+    <nb-card-header>Reset</nb-card-header>
+    <nb-card-body>
+      <form class="form-inline" [formGroup]="reset" (ngSubmit)="onSubmit()">
+        <div class="input-group full-width">
+          <div class="input-group-addon">Password</div>
+          <input type="password" class="form-control" placeholder="Password" formControlName="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>

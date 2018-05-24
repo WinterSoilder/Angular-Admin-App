@@ -1,0 +1,15 @@
+<!-- 1.	Register page should require First Name, Last Name, Email, Password, Confirm Password, and Company Name as mandatory, and optional address, and phone number (US Format) fields.<div class="row"> -->
+<div class="col-md-12">
+  <nb-card class="inline-form-card" (ngSubmit) = "onSubmit()">
+    <nb-card-header>Forgot</nb-card-header>
+    <nb-card-body>
+      <form class="form-inline" [formGroup]="forgot" (ngSubmit)="onSubmit()">
+        <div class="input-group full-width">
+          <div class="input-group-addon">Email</div>
+          <input type="text" class="form-control" placeholder="Email" formControlName="email">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>

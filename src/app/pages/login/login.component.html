@@ -1,0 +1,28 @@
+<!-- 2.	Login page should allow the user to visit dashboard using Email and Password once account is successfully registered. -->
+<div class="row">
+  <div class="col-md-12">
+    <nb-card class="inline-form-card">
+      <nb-card-header>Login</nb-card-header>
+      <nb-card-body>
+        <form class="form-inline" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="input-group full-width">
+            <div class="input-group-addon">@</div>
+            <input type="text" class="form-control" placeholder="Email" formControlName="email">
+            <span *ngIf="email.invalid && email.touched">
+              Email Does'nt Seem Right
+            </span>
+          </div>
+
+          <div class="input-group full-width">
+            <div class="input-group-addon">Password</div>
+            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+            <span *ngIf="password.invalid && password.touched">
+              Password Required
+            </span>  
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Submit</button>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
